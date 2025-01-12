@@ -1,8 +1,10 @@
-    const app = Vue.createApp({
-   data() {
-    return {
-     message: "Hello World!"
+const app = Vue.createApp({
+    data() {
+     return {
+      message: "Hello WEBPROG SS231 Students!",
+      vueClass: "pinkBG"
+     }
     }
-   }
-  })
-  app.mount('#app')
+   })
+   
+   app.mount('#app')

@@ -2,91 +2,153 @@
 <html>
 <head>
   <title>My first Vue page</title>
-  <link rel = "stylesheet" href="css/style.css"
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/flexbox-grid.css?version=0.1">   
+  <link rel="stylesheet" href="css/bind.css?version=0.1">   
+  <link rel="stylesheet" href="css/images.css?version=0.1">  
+  <link rel="stylesheet" href="css/shopping.css?version=0.1">
 </head>
 <body>
- 
-<h1>Example with JavaScript inside {{ }}</h1>
- 
-<p>The 'message' text from the Vue instance is put together with another text and a JavaScript expression. The JavaScript expression creates a random integer between 1 and 6.</p>
- 
-<div id="app">
-  {{ message }} <br>
-  {{'Random number: ' + Math.ceil(Math.random()*6) }}
-</div>
-
-
-<div class="container p-5 my-5 text-center text-white">
-  <h1>My Personal Webpage</h1>
-
-  
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md bg-primary text-white">About Me
-        <p>I am a passionate student ready to learn new things!</p>
-        <p>I enjoy exploring new technologies and applying them to solve real-world problems.</p>
-      </div>
-
-      <div class="col-md bg-dark text-white">Education / Achievements
-        <p>
-            <ul>
-                <li>With Honors Senior Highschool Graduate</li>
-                <li>A Dedicated Gamer</li>
-                <li>A Motorcycle Enthusiasts</li>
-            </ul>
-        </p>
-
-      </div>
-    </div>  
-  </div>
-  <br>
-  
-  <button type="button" onclick="myFunction()">Click Me and Win</button>
-  <script>
-    function myFunction() {
-      document.getElementById("demo").innerHTML = "Paragraph changed.";
-    }
-  </script>
-
-  <br>
-  <button type="button" onclick="myFunction2()">Curious Bout this button?</button>
-  <script>
-    function myFunction2() {
-      const element = document.getElementsByTagName("h1");
-      document.getElementById("demo").innerHTML = 'The text in first paragraph (index 0) is: ' + element[0].innerHTML;
-    }
-  </script>
-
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md bg-primary text-white">Course
-        <p>BS in Computer Science</p>
-        <p>Interested in Blockchaining and Cybersecurity</p>
-      </div>
-
-      <div class="col-md bg-dark text-white">IT Experience
-        <p>I have more than 10 years of experience in using technology</p>
-      </div>
-
-      <div class="col-md bg-primary text-white">Hobbies and Interests
+  <div class="container">
+    <header>
+      <h1>Personal Profile Web page</h1>
+    </header>
+    <main>
+      <section class="main-content">
+        <div>1 <br>About Me</div>
+        <div>2 <br>Education / Achievements</div>
+        <div>3 <br>Course</div>  
+        <div>4 <br>IT Experience</div>
+        <div>5 <br>Hobbies & Interests</div>
+        <div>6 <br>Goals In Life / Dream</div>  
+        <div class="flex-container">
+          <p>
+              About Me: I am a passionate student ready to learn new things!
+              <br><a href="https://www.w3schools.com/html/html_paragraphs.asp">Learn more about HTML paragraphs</a>
+          </p>
+        </div>
+        <p>Education / Achievements</p>
         <ul>
-            <li>Coding</li>
-            <li>Completing courses</li>
-            <li>Playing video games</li>
-            <li>Traveling</li>
+            <li>With Honors Senior Highschool Graduate</li>
+            <li>A Dedicated Gamer</li>
+            <li>A Motorcycle Enthusiasts</li>
         </ul>
-      </div>
-
-      <div class="col-md bg-dark text-white">Goals In Life / Dream
-        <p>My goal is to become a successful software engineer</p>
-      </div>
-    </div>  
+        
+        <p>Course</p>
+        <p>I'm a computer science student specializing in software systems. BSCS-SS231</p>
+        
+        <p>IT Experience</p>
+        <p>I have more than 10 years of experience in using technology</p>
+        
+        <p>Hobbies and Interests</p>
+        <div class="flex-container">
+            <div class="flex-item">Coding</div>
+            <div class="flex-item">Completing courses</div>
+            <div class="flex-item">Playing video games</div>
+            <div class="flex-item">Traveling</div>
+        </div>
+        
+        <p>Goals In Life / Dream</p>
+        <p>My goal is to become a full-stack developer and contribute to open-source projects.</p>
+        
+        <p>Picture Gallery</p>
+        <div>
+            <img src="Cat face.png" alt="Cat Face">
+            <img src="Sports bike.png" alt="Sports bike">
+        </div>
+        
+        <p>Valorant Skills</p>
+        <table>
+            <tr>
+                <td>Skill</td>
+                <td>Proficiency</td>
+            </tr>
+            <tr>
+                <td>Shooting</td>
+                <td>Intermediate</td>
+            </tr>
+            <tr>
+                <td>Strafe</td>
+                <td>Beginner</td>
+            </tr>
+            <tr>
+                <td>Tracking</td>
+                <td>Intermediate</td>
+            </tr>
+            <tr>
+                <td>Game Sense</td>
+                <td>Intermediate</td>
+            </tr>
+        </table>
+      </section>
+    </main>
+    <footer>
+      Asia Pacific College
+    </footer>
   </div>
-</div>
-  
-<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-<script src="js/vue.js"></script>
 
- 
+  <div id="app">
+    {{ message }} <br>
+    {{'Random number: ' + Math.ceil(Math.random()*6) }}
+    <div v-bind:class="vueClass">This element is bound to the "pinkBG" class.</div>
+  </div>
+
+  <div id="app2">
+    <div>
+      <figure v-for="x in manyFoods">
+        <img v-bind:src="x.url">
+        <figcaption>{{ x.name }}</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div id="app3">
+    <form v-on:submit.prevent="addItem">
+      <p>
+        What do you need? <br>
+        <input type="text" required placeholder="item name.." v-model="itemName">
+      </p>
+      <p>
+        How many? <br>
+        <input type="number" placeholder="number of items.." v-model="itemNumber">
+      </p>
+      <p>
+        Important?
+        <label>
+          <input type="checkbox" v-model="itemImportant">
+          {{ itemImportant }}
+        </label>
+      </p>
+      <button type="submit">Add item</button>
+    </form>
+    <br>
+    <hr>
+    <div>
+      <p><strong>Shopping list:</strong></p>
+      <ul id="ulToFind">
+        <li 
+          v-for="item in shoppingList" 
+          v-bind:class="{ impClass: item.important }"
+          v-on:click="item.found=!item.found"
+          v-show="!item.found">
+          {{ item.name }}, {{ item.number}}
+        </li>
+      </ul>
+      <ul id="ulFound">
+        <li 
+          v-for="item in shoppingList" 
+          v-bind:class="{ impClass: item.important }"
+          v-on:click="item.found=!item.found"
+          v-show="item.found">
+          {{ item.name }}, {{ item.number}}
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="js/vue.js"></script>
+  <script src="js/images.js"></script>
+  <script src="js/shopping.js"></script>
 </body>
 </html>
