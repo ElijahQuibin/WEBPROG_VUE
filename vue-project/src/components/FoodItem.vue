@@ -1,7 +1,9 @@
 <template>
-    <div class="apple">
-      <h2>{{ name }}</h2>
-      <p>{{ message }}</p>
+    <div class="container">
+        <div class="apple">
+            <h2>{{ name }}</h2>
+            <p>{{ message }}</p>
+        </div>
     </div>
 </template>
 
@@ -17,13 +19,14 @@
 </script>
 
 <style>
-    .apple {
+.container {
+    display: flex;
+    flex-direction: row;
+}
+.apple {
     border: dashed black 1px;
-    display: inline-block;
     margin: 10px;
     padding: 10px;
     background-color: lightgreen;
-    /* Add the following line to make the boxes horizontal */
-    float: left;
-    }
+}
 </style>
