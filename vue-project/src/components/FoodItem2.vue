@@ -21,7 +21,7 @@ export default {
 <style>
 .container {
     display: flex;
-    flex-direction: row;
+    flex-direction: row; /* Changed from column to row */
 }
 .mango {
     border: dashed black 1px;

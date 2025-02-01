@@ -21,7 +21,7 @@
 <style>
 .container {
     display: flex;
-    flex-direction: row;
+    flex-direction: row; /* Changed from column to row */
 }
 .apple {
     border: dashed black 1px;
