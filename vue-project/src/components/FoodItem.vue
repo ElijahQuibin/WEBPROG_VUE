@@ -1,13 +1,11 @@
 <template>
-    <div class="container">
-        <div class="apple">
-            <h2>{{ name }}</h2>
-            <p>{{ message }}</p>
-        </div>
+    <div class="apple">
+      <h2>{{ name }}</h2>
+      <p>{{ message }}</p>
     </div>
-</template>
-
-<script>
+  </template>
+  
+  <script>
   export default {
     data() {
       return {
@@ -16,17 +14,14 @@
       }
     }
   };
-</script>
-
-<style>
-.container {
-    display: flex;
-    flex-direction: row; /* Changed from column to row */
-}
-.apple {
+  </script>
+  
+  <style>
+    .apple {
     border: dashed black 1px;
+    display: inline-block;
     margin: 10px;
     padding: 10px;
     background-color: lightgreen;
-}
+  }
 </style>
