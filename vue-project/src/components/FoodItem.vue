@@ -3,9 +3,9 @@
       <h2>{{ name }}</h2>
       <p>{{ message }}</p>
     </div>
-  </template>
+</template>
 
-  <script>
+<script>
   export default {
     data() {
       return {
@@ -14,7 +14,7 @@
       }
     }
   };
-  </script>
+</script>
 
 <style>
     .apple {
@@ -23,5 +23,7 @@
     margin: 10px;
     padding: 10px;
     background-color: lightgreen;
+    /* Add the following line to make the boxes horizontal */
+    float: left;
     }
 </style>
