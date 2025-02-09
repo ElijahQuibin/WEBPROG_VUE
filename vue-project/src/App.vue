@@ -1,11 +1,6 @@
 <script></script>
 
 <template>
-
-    <ul>
-      <li v-for="instrument in instruments" :key="instrument.id">{{ instrument.name }}</li>
-    </ul>
-    
   <h1>Food</h1> 
   <food-item/> <br>
   <food-item2/> <br>
