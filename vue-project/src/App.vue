@@ -2,7 +2,7 @@
 
 <template>
   <h1>Food</h1>
-  <country/>
+  <instrument/>
   <food-item/>
   <food-item/>
   <food-item/>
